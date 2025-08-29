@@ -1,0 +1,22 @@
+{
+    "messages": [
+        {
+          "role": "system",
+          "content": "You are a helpful, honest, and concise assistant."
+        },
+        {
+          "role": "user",
+          "content": "Create a character with strength = 5."
+        }
+
+      ],
+    "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+            "name": "test schema",
+            "schema": {"$defs": {"Armor": {"enum": ["leather", "chain", "plate"], "title": "Armor", "type": "string"}, "Weapon": {"enum": ["sword", "axe", "mace", "spear", "bow", "crossbow", "morning star"], "title": "Weapon", "type": "string"}}, "properties": {"name": {"title": "Name", "type": "string"}, "age": {"title": "Age", "type": "integer"}, "armor": {"$ref": "#/$defs/Armor"}, "weapon": {"$ref": "#/$defs/Weapon"}, "strength": {"title": "Strength", "type": "integer"}}, "required": ["name", "age", "armor", "weapon", "strength"], "title": "Character", "type": "object"}
+         }
+    },
+    "max_tokens": 1000,
+    "temperature": 0.6
+}
