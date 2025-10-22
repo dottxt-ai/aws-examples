@@ -1,0 +1,28 @@
+{
+    "id": "chatcmpl-a33cea2518ba4893835aa78245cf5217",
+    "object": "chat.completion",
+    "created": 1756494744,
+    "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "reasoning_content": "Okay, so I need to create a character...\n",
+                "content": "{\"name\":\"Ethan\",\"age\":24,\"armor\":\"leather\",\"weapon\":\"spear\",\"strength\":5}",
+                "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 25,
+        "total_tokens": 962,
+        "completion_tokens": 937,
+        "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "kv_transfer_params": null
+}
