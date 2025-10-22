@@ -1,22 +1,91 @@
 {
-    "messages": [
+  "model": "Qwen/Qwen2.5-VL-32B-Instruct",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful, honest, and concise assistant."
+    },
+    {
+      "role": "user",
+      "content": [
         {
-          "role": "system",
-          "content": "You are a helpful, honest, and concise assistant."
+          "type": "text",
+          "text": "Create a character based on this image"
         },
         {
-          "role": "user",
-          "content": "Create a character with strength = 5."
+          "type": "image_url",
+          "image_url": {
+            "url": "data:image/svg;base64,/9j/4AAQSkZJRgABAQAAAAAAAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAA7AJsDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAwQAAQIF/8QAMxAAAQQAAwYEBAUFAAAAAAAAAQACAxEEEjETFCFBUWE0cYGRMlOhsSIzQlKSI2PB0fD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AdWXOytJ6BaSuLdmLYhxvWuSCrdiW3l4XVdO6vd35x+Li3R/+KTEbcjA27oLSBQYdwa41rqy9fVZdBLWXLmA+E3onVRNC0CbgY5bzZXnQ1eb/AEjMmy0yUU8/VBjO3xRJstGl8leI8XH6fdA4ooogBvUQOp9lN7i6n2V7rET8J90rFG12Jcwj8ItA0zERvcGtJs9lrbM2uzs5vJUzDxscHNHEd0viI3xymVp9eiB1YkkbG3M7RYhxDXsJJojVLTSunfkYOH37oGzMwRiQk5T2WN7i6n2WmwN2IjfxAQZ8PGyFzmjiO6Am9xdT7Kb3F1PshYaCOSLM4Wb6ou6xftPugK9wa0kkDzS2FaXyOmcKPLorxTy4iJvEnUI7WBseQXVUgqSMvNiRzewWdgfnSe6m7j5kn8lN3HzJP5ILZEWuB2rzXIlYxcmVgaCQ53NEZGI7OZx8ylmt3qZziSGjlaA0EBi4lxvmOSFiPFx+n3TDIQx1hzj5lL4jxcfp90DiiipBaSh8a7zKdSUPjXeZQOqiARRFhWlcTiMtsZrzPRAtM1rJCGOseacwrGNjBbxJ17IcOFthL9SPZCBfhZK/SeXVB0EHFeHciMeHtDm6FDxXh3IKwf5HqUdAwf5HqUdAnhf6krpH/EE3aXfhGmshy/VZ3L+59EDVqWueyLNM6MvquaLug+cEBMXJljyj9XNVHhWBotxvnRpZbhWBwLpAR0RNhB/zkGmQsY62k33KBiPFx+n3R44omOtmvmgYjxcfp90DiFPEZWBoNcbRVRNAk6BBmJmSNrSbpDjw5ZOZMwo3wWhODEX0eBqlb5C14a1uY1etICJfdzvG1zCr0RRIOGYhpPIlWZGB1FwB6Wg0hTxbWPKDXFaErK4uA7WrL2h2UuF9LQVCzZxhpN0pMzaRloNWrztzVmFjlarassU4EdbQVBGYo8pN8URZ2jCCcwoam1W1j/e33QbUUUQJOjEcrnzNthPBFEeGIBpvHujOY14pwBHdcyQVI4Dqge2WG6M91NlhujPdc9RB0WNgYbblB80Fx22LaWccuvulF0cOxoia4NAJGqAyHM1z2ZW8+B8kRRAu6F4zAHMHVrw0Vyxl0odkDhVUTSOogXMRcH2wC20Beiw4EEsoElwPdNqIFmwuAfYFltD6qbF91qCQbvRMqIFti+61Fk3ajoHGNgAHBtHzTKiBeVha4voUKSsjHvkc4MNHoF0lEH//2Q== "
+          }
         }
-
-      ],
-    "response_format": {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "test schema",
-            "schema": {"$defs": {"Armor": {"enum": ["leather", "chain", "plate"], "title": "Armor", "type": "string"}, "Weapon": {"enum": ["sword", "axe", "mace", "spear", "bow", "crossbow", "morning star"], "title": "Weapon", "type": "string"}}, "properties": {"name": {"title": "Name", "type": "string"}, "age": {"title": "Age", "type": "integer"}, "armor": {"$ref": "#/$defs/Armor"}, "weapon": {"$ref": "#/$defs/Weapon"}, "strength": {"title": "Strength", "type": "integer"}}, "required": ["name", "age", "armor", "weapon", "strength"], "title": "Character", "type": "object"}
-         }
-    },
-    "max_tokens": 1000,
-    "temperature": 0.6
+      ]
+    }
+  ],
+  "seed": 42,
+  "n": 1,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "test schema",
+      "schema": {
+        "$defs": {
+          "Armor": {
+            "enum": [
+              "leather",
+              "chain",
+              "plate"
+            ],
+            "title": "Armor",
+            "type": "string"
+          },
+          "Weapon": {
+            "enum": [
+              "sword",
+              "axe",
+              "mace",
+              "spear",
+              "bow",
+              "crossbow",
+              "morning star"
+            ],
+            "title": "Weapon",
+            "type": "string"
+          }
+        },
+        "properties": {
+          "name": {
+            "maxLength": 10,
+            "title": "Name",
+            "type": "string"
+          },
+          "age": {
+            "title": "Age",
+            "type": "integer"
+          },
+          "armor": {
+            "$ref": "#/$defs/Armor"
+          },
+          "weapon": {
+            "$ref": "#/$defs/Weapon"
+          },
+          "strength": {
+            "title": "Strength",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "age",
+          "armor",
+          "weapon",
+          "strength"
+        ],
+        "title": "Character",
+        "type": "object"
+      }
+    }
+  },
+  "top_p": 0.4,
+  "frequency_penalty": 1.4,
+  "presence_penalty": 1.4
 }
